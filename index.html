@@ -18,6 +18,7 @@
 		.gal-nav { font-size: 4em; padding: 0 .3em; }
 		.gal-close { position: absolute; top: .2em; right: .4em; font-size: 2.5em; }
 		.gal-count { position: absolute; bottom: 1em; left: 0; right: 0; text-align: center; color: #fff; font-size: .9em; letter-spacing: .1em; }
+		.gal-video { width: 80vw; max-width: 1100px; height: 45vw; max-height: 85vh; border: 0; border-radius: 4px; background: #000; }
 		</style>
 	</head>
 	<body class="is-preload">
@@ -42,7 +43,7 @@
 							<h2>Uploaded my first YouTube video at 12.<br />
 								Never stopped creating since.</h2>
 				</header>
-					<p>I'm a Community & Social Media Manager with 5+ years of experience building brands in gaming and FinTech. At Twitch, I solo-manage the APAC Instagram, producing 170+ localized videos for gaming and IRL audiences.</p>
+					<p>I'm a Community & Social Media Manager with 5+ years of experience building brands in gaming and FinTech. At Twitch, I solo-manage the APAC Instagram, producing 135+ localized videos for gaming and IRL audiences.</p>
 					<p>It all started at 12, when I uploaded my first YouTube video, recording Counter-Strike because I was going to play anyway. That hobby grew into a channel with 120K+ views in a year, and I mastered video editing and studied languages to reach a wider market. Since then, I've grown a financial education Instagram from 500 to 20,000+ followers, helped build an 8,000+ member Telegram community, and helped raise US $2M in client investments.</p>
 					<p>Based in Calgary and fully eligible to work in Canada, I'm ready to bring this experience to Alberta businesses right away.</p>
 					<ul class="actions">
@@ -55,11 +56,11 @@
 						<h2>Recent Work</h2>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="https://www.instagram.com/twitchtaiwan/" target="_blank" rel="noopener" style="display:block; border-radius:4px; overflow:hidden; border-bottom:0;">
+								<a href="https://www.instagram.com/twitchtaiwan/" target="_blank" rel="noopener" style="display:block; border-radius:4px; overflow:hidden; border-bottom:0; margin-bottom:1.5em;">
 									<img src="images/thumbs/01.jpg" alt="Twitch Taiwan Instagram" style="display:block; width:100%;" />
 								</a>
 									<h3>Twitch APAC Instagram</h3>
-									<p>Solo-managed the account, producing 170+ localized gaming and IRL highlight videos.</p>
+									<p>Solo-managed the account, producing 135+ localized gaming and IRL highlight videos.</p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 	<a href="#" class="my-gallery" data-images="images/fulls/02-1.jpg,images/fulls/02-2.jpg" style="display:block; border-radius:4px; overflow:hidden; border-bottom:0; margin-bottom:1.5em;">
@@ -70,11 +71,11 @@
 </article>
 
 <article class="col-6 col-12-xsmall work-item">
-	<a href="#" class="my-gallery" data-images="images/fulls/08-1.jpg,images/fulls/08-2.jpg,images/fulls/08-3.jpg" style="display:block; border-radius:4px; overflow:hidden; border-bottom:0; margin-bottom:1.5em;">
+	<a href="#" class="my-gallery" data-images="images/fulls/08-1.jpg,https://drive.google.com/file/d/12DNf40G0Y-7l8Hv-0OOzz38DqurMvUN6/preview,images/fulls/08-2.jpg,images/fulls/08-3.jpg" style="display:block; border-radius:4px; overflow:hidden; border-bottom:0; margin-bottom:1.5em;">
 		<img src="images/thumbs/08.jpg" alt="BTSE social media content" style="display:block; width:100%;" />
 	</a>
-	<h3>BTSE FinTech Content</h3>
-	<p>Campaign visuals, educational posts, and meme-style content for a crypto exchange. Click to browse.</p>
+	<h3>BTSE FinTech Social Media Content</h3>
+	<p>Designed campaign visuals, videos, and educational posts for crypto exchanges. Click to browse.</p>
 </article>
 
 <article class="col-6 col-12-xsmall work-item">
@@ -102,7 +103,7 @@
 </article>
 						</div>
 						<ul class="actions">
-							<li><a href="#" class="button">Full Resume</a></li>
+							<li><a href="files/Eric-Ko-Resume.pdf" target="_blank" rel="noopener" class="button">Full Resume</a></li>
 						</ul>
 					</section>
 
@@ -112,16 +113,6 @@
 						<p>Open to Social Media, Community, and Marketing roles in Calgary and remote. Let's talk.</p>
 						<div class="row">
 							<div class="col-8 col-12-small">
-								<form method="post" action="#">
-									<div class="row gtr-uniform gtr-50">
-										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-										<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-										<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
-									</div>
-								</form>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
 							</div>
 							<div class="col-4 col-12-small">
 								<ul class="labeled-icons">
@@ -135,7 +126,7 @@
 										403-888-3022
 									</li>
 									<li>
-										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+										<a href="mailto:skylande1208@gmail.com">skylande1208@gmail.com</a>
 										<a href="#">skylande1208@gmail.com</a>
 									</li>
 								</ul>
@@ -479,27 +470,42 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
-		<script>
+	<script>
 (function () {
 	var overlay = document.createElement('div');
 	overlay.className = 'gal-overlay';
 	overlay.innerHTML = '<div class="gal-close" role="button" aria-label="Close">&times;</div>' +
 		'<div class="gal-nav gal-prev" role="button" aria-label="Previous">&#8249;</div>' +
 		'<img class="gal-img" alt="" />' +
+		'<iframe class="gal-video" allow="autoplay; fullscreen" allowfullscreen style="display:none;"></iframe>' +
 		'<div class="gal-nav gal-next" role="button" aria-label="Next">&#8250;</div>' +
 		'<div class="gal-count"></div>';
 	document.body.appendChild(overlay);
 
 	var img = overlay.querySelector('.gal-img');
+	var video = overlay.querySelector('.gal-video');
 	var count = overlay.querySelector('.gal-count');
 	var list = [], i = 0;
 
 	function show(n) {
 		i = (n + list.length) % list.length;
-		img.src = list[i];
+		var src = list[i];
+		if (src.indexOf('drive.google.com') > -1) {
+			img.style.display = 'none';
+			video.style.display = 'block';
+			video.src = src;
+		} else {
+			video.style.display = 'none';
+			video.src = '';
+			img.style.display = '';
+			img.src = src;
+		}
 		count.textContent = (i + 1) + ' / ' + list.length;
 	}
-	function close() { overlay.classList.remove('open'); }
+	function close() {
+		overlay.classList.remove('open');
+		video.src = '';
+	}
 
 	document.querySelectorAll('a.my-gallery').forEach(function (a) {
 		a.addEventListener('click', function (e) {
