@@ -10,6 +10,15 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+		.gal-overlay { position: fixed; top: 0; right: 0; bottom: 0; left: 0; background: rgba(0,0,0,.85); display: none; align-items: center; justify-content: center; z-index: 30000; }
+		.gal-overlay.open { display: flex; }
+		.gal-img { max-width: 80vw; max-height: 85vh; border-radius: 4px; background: #fff; }
+		.gal-nav, .gal-close { color: #fff; cursor: pointer; user-select: none; line-height: 1; }
+		.gal-nav { font-size: 4em; padding: 0 .3em; }
+		.gal-close { position: absolute; top: .2em; right: .4em; font-size: 2.5em; }
+		.gal-count { position: absolute; bottom: 1em; left: 0; right: 0; text-align: center; color: #fff; font-size: .9em; letter-spacing: .1em; }
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -458,6 +467,49 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
+		<script>
+(function () {
+	var overlay = document.createElement('div');
+	overlay.className = 'gal-overlay';
+	overlay.innerHTML = '<div class="gal-close" role="button" aria-label="Close">&times;</div>' +
+		'<div class="gal-nav gal-prev" role="button" aria-label="Previous">&#8249;</div>' +
+		'<img class="gal-img" alt="" />' +
+		'<div class="gal-nav gal-next" role="button" aria-label="Next">&#8250;</div>' +
+		'<div class="gal-count"></div>';
+	document.body.appendChild(overlay);
+
+	var img = overlay.querySelector('.gal-img');
+	var count = overlay.querySelector('.gal-count');
+	var list = [], i = 0;
+
+	function show(n) {
+		i = (n + list.length) % list.length;
+		img.src = list[i];
+		count.textContent = (i + 1) + ' / ' + list.length;
+	}
+	function close() { overlay.classList.remove('open'); }
+
+	document.querySelectorAll('a.my-gallery').forEach(function (a) {
+		a.addEventListener('click', function (e) {
+			e.preventDefault();
+			list = a.getAttribute('data-images').split(',');
+			show(0);
+			overlay.classList.add('open');
+		});
+	});
+
+	overlay.querySelector('.gal-prev').addEventListener('click', function (e) { e.stopPropagation(); show(i - 1); });
+	overlay.querySelector('.gal-next').addEventListener('click', function (e) { e.stopPropagation(); show(i + 1); });
+	overlay.querySelector('.gal-close').addEventListener('click', close);
+	overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+	document.addEventListener('keydown', function (e) {
+		if (!overlay.classList.contains('open')) return;
+		if (e.key === 'Escape') close();
+		if (e.key === 'ArrowLeft') show(i - 1);
+		if (e.key === 'ArrowRight') show(i + 1);
+	});
+})();
+</script>
 			<script src="assets/js/jquery.poptrox.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
