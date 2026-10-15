@@ -19,6 +19,12 @@
 		.gal-close { position: absolute; top: .2em; right: .4em; font-size: 2.5em; }
 		.gal-count { position: absolute; bottom: 1em; left: 0; right: 0; text-align: center; color: #fff; font-size: .9em; letter-spacing: .1em; }
 		.gal-video { width: 80vw; max-width: 1100px; height: 45vw; max-height: 85vh; border: 0; border-radius: 4px; background: #000; }
+		/* Avatar centered */
+#header .image.avatar { display: block !important; margin-left: auto !important; margin-right: auto !important; }
+/* Contact: address / phone / email in one row, left to right */
+#three .labeled-icons { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 2em 3em; }
+#three .labeled-icons li { margin: 0 !important; }
+@media screen and (max-width: 736px) { #three .labeled-icons { flex-direction: column; } }
 		</style>
 	</head>
 	<body class="is-preload">
@@ -28,7 +34,7 @@
 				<div class="inner">
 					<a href="#" class="image avatar" style="overflow:hidden;border-radius:100%;"><img src="images/avatar.jpg" alt="Eric Ko" style="transform:scale(1.5);transform-origin:60% 30%;" /></a>
 					<h1><strong>Eric Ko</strong><br />
-					Social Media Manager · 5+ Years<br />
+					5 Years Social Media Manager <br />
 					APAC Community Manager @Twitch<br />
 					</h1>
 				</div>
@@ -112,9 +118,7 @@
 						<h2>Get In Touch</h2>
 						<p>Open to Social Media, Community, and Marketing roles in Calgary and remote. Let's talk.</p>
 						<div class="row">
-							<div class="col-8 col-12-small">
-							</div>
-							<div class="col-4 col-12-small">
+							<div class="col-12">
 								<ul class="labeled-icons">
 									<li>
 										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
@@ -122,7 +126,7 @@
 										Canada
 									</li>
 									<li>
-										<h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
+										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
 										403-888-3022
 									</li>
 									<li>
