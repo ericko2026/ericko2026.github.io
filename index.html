@@ -19,8 +19,31 @@
 		.gal-close { position: absolute; top: .2em; right: .4em; font-size: 2.5em; }
 		.gal-count { position: absolute; bottom: 1em; left: 0; right: 0; text-align: center; color: #fff; font-size: .9em; letter-spacing: .1em; }
 		.gal-video { width: 80vw; max-width: 1100px; height: 45vw; max-height: 85vh; border: 0; border-radius: 4px; background: #000; }
-		/* Avatar centered */
-#header .image.avatar { display: block !important; margin-left: auto !important; margin-right: auto !important; }
+		/* Header + avatar */
+#header .inner { text-align: center !important; }
+#header .image.avatar { display: block !important; width: 140px !important; height: 140px !important; margin: 0 auto 1.5em !important; border-radius: 50% !important; overflow: hidden !important; }
+#header .image.avatar img { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: 40% 15% !important; transform: none !important; }
+
+/* Hero */
+.hero { display: flex; align-items: center; gap: 3em; }
+.hero-text { flex: 1 1 50%; }
+.hero-text h2 { font-size: 2.2em; line-height: 1.25; margin-bottom: .6em; }
+.hero-visual { flex: 1 1 50%; display: grid; grid-template-columns: 1fr 1fr; gap: .8em; }
+.hero-visual img { width: 100%; display: block; border-radius: 6px; box-shadow: 0 6px 18px rgba(0,0,0,.15); transition: transform .4s ease; }
+.hero-visual img:first-child { grid-column: 1 / -1; }
+.hero-visual img:hover { transform: translateY(-4px); }
+
+/* Stats */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5em; margin-top: 3em; padding-top: 2em; border-top: 2px solid rgba(160,160,160,.2); text-align: center; }
+.stats strong { display: block; font-size: 2.4em; line-height: 1.1; }
+.stats span { font-size: .8em; opacity: .7; }
+@media screen and (max-width: 980px) { .hero { flex-direction: column; } .stats { grid-template-columns: repeat(2, 1fr); } }
+
+/* Scroll fade-in + hover zoom */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.show { opacity: 1; transform: none; }
+.work-item a img { transition: transform .4s ease; }
+.work-item a:hover img { transform: scale(1.05); }
 /* Contact: address / phone / email in one row, left to right */
 #three .labeled-icons { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 2em 3em; }
 #three .labeled-icons li { margin: 0 !important; }
@@ -32,7 +55,7 @@
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
-					<a href="#" class="image avatar" style="overflow:hidden;border-radius:100%;"><img src="images/avatar.jpg" alt="Eric Ko" style="transform:scale(1.5);transform-origin:60% 30%;" /></a>
+					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="Eric Ko" /></a>
 					<h1><strong>Eric Ko</strong><br />
 					5 Years Social Media Manager <br />
 					APAC Community Manager @Twitch<br />
@@ -45,17 +68,27 @@
 
 				<!-- One -->
 				<section id="one">
-					<header class="major">
-							<h2>Uploaded my first YouTube video at 12.<br />
-								Never stopped creating since.</h2>
-				</header>
-					<p>I'm a Community & Social Media Manager with 5+ years of experience building brands in gaming and FinTech. At Twitch, I solo-manage the APAC Instagram, producing 135+ localized videos for gaming and IRL audiences.</p>
-					<p>It all started at 12, when I uploaded my first YouTube video, recording Counter-Strike because I was going to play anyway. That hobby grew into a channel with 120K+ views in a year, and I mastered video editing and studied languages to reach a wider market. Since then, I've grown a financial education Instagram from 500 to 20,000+ followers, helped build an 8,000+ member Telegram community, and helped raise US $2M in client investments.</p>
-					<p>Based in Calgary and fully eligible to work in Canada, I'm ready to bring this experience to Alberta businesses right away.</p>
-					<ul class="actions">
-						<li><a href="files/Eric-Ko-Resume.pdf" target="_blank" rel="noopener" class="button">Read Full Resume</a></li>
-					</ul>
-				</section>
+	<div class="hero">
+		<div class="hero-text">
+			<h2>I grow gaming &amp; FinTech communities.</h2>
+			<p>5+ years in social media &amp; community. I solo-manage Twitch's APAC Instagram, and I've been making videos since I was 12. Based in Calgary, eligible to work in Canada.</p>
+			<ul class="actions">
+				<li><a href="files/Eric-Ko-Resume.pdf" target="_blank" rel="noopener" class="button">Read Full Resume</a></li>
+			</ul>
+		</div>
+		<div class="hero-visual">
+			<img src="images/thumbs/01.jpg" alt="Twitch Taiwan Instagram" />
+			<img src="images/thumbs/08.jpg" alt="BTSE social media content" />
+			<img src="images/thumbs/03.jpg" alt="Financial education content on IG" />
+		</div>
+	</div>
+	<div class="stats">
+		<div><strong data-count="880" data-pre="+" data-suf="%">+880%</strong><span>Instagram growth in 1 year</span></div>
+		<div><strong data-count="135" data-suf="+">135+</strong><span>Localized videos</span></div>
+		<div><strong data-count="3.7" data-dec="1" data-suf="M">3.7M</strong><span>Impressions</span></div>
+		<div><strong data-count="8000" data-suf="+">8,000+</strong><span>Telegram community</span></div>
+	</div>
+</section>
 
 				<!-- Two -->
 					<section id="two">
@@ -126,10 +159,11 @@
 										Canada
 									</li>
 									<li>
-										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+										<h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
 										403-888-3022
 									</li>
 									<li>
+										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
 										<a href="mailto:skylande1208@gmail.com">skylande1208@gmail.com</a>
 									</li>
 								</ul>
@@ -536,6 +570,35 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+<script>
+(function () {
+	if (!('IntersectionObserver' in window)) return;
+	var io = new IntersectionObserver(function (entries) {
+		entries.forEach(function (e) {
+			if (!e.isIntersecting) return;
+			e.target.classList.add('show');
+			io.unobserve(e.target);
+			if (e.target.classList.contains('stats')) countUp(e.target);
+		});
+	}, { threshold: 0.15 });
+	document.querySelectorAll('.hero, .stats, .work-item, #three').forEach(function (el) {
+		el.classList.add('reveal');
+		io.observe(el);
+	});
+	function countUp(box) {
+		box.querySelectorAll('[data-count]').forEach(function (el) {
+			var end = parseFloat(el.dataset.count), dec = parseInt(el.dataset.dec || 0, 10);
+			var pre = el.dataset.pre || '', suf = el.dataset.suf || '', t0 = null, dur = 1400;
+			function step(t) {
+				if (!t0) t0 = t;
+				var p = Math.min((t - t0) / dur, 1), v = end * (1 - Math.pow(1 - p, 3));
+				el.textContent = pre + v.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf;
+				if (p < 1) requestAnimationFrame(step);
+			}
+			requestAnimationFrame(step);
+		});
+	}
+})();
+</script>
 	</body>
 </html>
